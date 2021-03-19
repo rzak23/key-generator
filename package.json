@@ -1,22 +1,36 @@
 {
   "name": "key-generator",
   "version": "1.0.0",
-  "description": "",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "build-win64": "electron-builder build --win --x64",
+    "build-lnx": "electron-builder build --linux deb"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Reza Akbar",
+  "email": "reza.akbar2396@gmail.com",
+  "license": "GPL-3.0",
   "devDependencies": {
-    "electron": "^12.0.1"
+    "electron": "^12.0.1",
+    "electron-builder": "^22.10.5"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
     "bootstrap": "^4.6.0",
     "clipboard": "^2.0.8",
-    "jquery": "^3.6.0"
-  }
+    "jquery": "^3.6.0",
+    "toastr": "^2.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rzak23/key-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rzak23/key-generator/issues",
+    "email": "reza.akbar2396@gmail.com"
+  },
+  "homepage": "https://github.com/rzak23/key-generator#readme",
+  "description": ""
 }
