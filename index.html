@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/solid.min.css">
     <!-- Toastr -->
     <link rel="stylesheet" href="node_modules/toastr/build/toastr.css">
+    <!-- Custom -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -20,6 +22,15 @@
                 <div class="form-group">
                     <label for="key">Your Key</label>
                     <div class="input-group">
+                        <div class="input-group-prepend">
+                            <select name="length" id="length" class="form-control">
+                                <option value="8">8</option>
+                                <option value="16">16</option>
+                                <option value="32">32</option>
+                                <option value="64">64</option>
+                                <option value="128">128</option>
+                            </select>
+                        </div>
                         <input type="text" class="form-control" id="key" autocomplete="off" readonly>
                         <div class="input-group-append">
                             <button type="button" class="btn btn-success copu" id="btnCop" data-clipboard-target="#key">
@@ -37,8 +48,28 @@
             </div>
         </div>
         <div class="row mt-2">
-            <span id="appVersion"></span>
+            <div class="col-12 text-center">
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#about">
+                    <i class="fas fa-exclamation"></i>
+                    <span>About</span>
+                </button>
+            </div>
         </div>
+        <!-- Modal About -->
+        <div class="modal fade" role="dialog" id="about">
+            <div class="modal-dialog">
+                <div class="modal-content text-center">
+                    <div class="modal-header">
+                        <h6>About</h6>
+                    </div>
+                    <div class="modal-body">
+                        <p id="author"></p>
+                        <p id="appVersion"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal About -->
     </div>
     <!-- Jquery -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
@@ -55,8 +86,9 @@
                 var alphab = "ABCDEFGHIJKLMNOPQRSTU";
                 var numeric = "1234567890";
                 var char = alphas+alphab+numeric;
+                var length = document.getElementById('length').value;
 
-                var rs = randomString(char);
+                var rs = randomString(char,length);
                 $('#key').val(rs);
             });
 
@@ -83,12 +115,13 @@
             });
             $.getJSON('./package.json',function(data){
                 $('#appVersion').html("Version : "+data.version);
+                $('#author').html("Author : "+data.author);
             })
         })
         
-        function randomString(char) {
-            var result           = '';
-            var length = 64;
+        function randomString(char,length) {
+            var result = '';
+            var length = length;
             var clenght = char.length;
             for ( var i = 0; i < length; i++ ) {
                 result += char.charAt(Math.floor(Math.random() * clenght));
