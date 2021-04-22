@@ -13,3 +13,5 @@ Aplikasi pembuat kunci kombinasi alpha-numeric
 * [Jquery](https://jquery.com)
 * [ClipboardJS](https://clipboardjs.com/)
 * [Toastr](https://codeseven.github.io/toastr/)
+
+Icon dibuat oleh [Rudez Studio](https://www.iconfinder.com/Ruslancorel)
