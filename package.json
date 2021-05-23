@@ -1,7 +1,6 @@
 {
   "name": "key-generator",
-  "version": "1.2.4",
-  "tag_name": "v1.2.4",
+  "version": "1.2.6",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -9,16 +8,18 @@
     "build-lnx": "electron-builder build --linux deb"
   },
   "keywords": [],
-  "author": "rzak23",
-  "email": "reza.akbar2396@gmail.com",
+  "author": {
+    "name": "rzak23",
+    "email": "rzak@restdx.com"
+  },
   "license": "GPL-3.0",
   "devDependencies": {
-    "electron": "^12.0.6",
+    "electron": "^12.0.9",
     "electron-builder": "^22.10.5"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
-    "bootstrap": "^4.6.0",
+    "bootstrap": "^5.0.1",
     "clipboard": "^2.0.8",
     "jquery": "^3.6.0",
     "toastr": "^2.1.4",
