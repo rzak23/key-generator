@@ -1,3 +1,11 @@
-body{
+/* body{
     background-color: #00d2d3;
+} */
+@media (prefers-color-scheme: dark) {
+    body { background: #2f3542; color: white; }
 }
+  
+@media (prefers-color-scheme: light) {
+    body { background: #a4b0be; color: black; }
+}
+  
